@@ -16,23 +16,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var x = TextEditingController();
-
   var user = TextEditingController();
   var password = TextEditingController();
 
@@ -85,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 ElevatedButton(
-                  child: Mytext(
-                    label: "Next",
+                  child: const Text(
+                    "Next",
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -105,16 +101,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
-  }
-}
-
-class Mytext extends StatelessWidget {
-  var label;
-
-  Mytext({this.label, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text("$label");
   }
 }
